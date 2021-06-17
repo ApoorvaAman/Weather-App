@@ -1,6 +1,8 @@
 import { useLazyQuery } from '@apollo/client'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import * as dayjs from 'dayjs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import GET_CURRENT_WEATHER from '../graphql/currentWeatherQuery'
 import Loading from './Loading'
 import Error from './Error'
@@ -31,7 +33,7 @@ const Weather = (): JSX.Element => {
       <form>
         <input type="text" placeholder="London" onChange={handleChange} />
         <button type="submit" onClick={handleSubmit}>
-          Search
+          <FontAwesomeIcon icon={faSearch} />
         </button>
       </form>
       {data?.getCityByName !== null &&
